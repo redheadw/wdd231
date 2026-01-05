@@ -24,7 +24,6 @@ function setupEventsModal() {
   const closeBtn = document.querySelector("#closeModal");
   const list = document.querySelector("#eventsList");
 
-  // If you’re not on the home page, do nothing.
   if (!eventBtn || !modal || !closeBtn || !list) return;
 
   const events = [
@@ -54,12 +53,10 @@ function setupEventsModal() {
     closeModal();
   });
 
-  // Click outside modal-content closes it
   modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
   });
 
-  // Escape key closes it
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !modal.hidden) closeModal();
   });
@@ -68,3 +65,4 @@ function setupEventsModal() {
 setFooterMeta();
 setupHamburgerMenu();
 setupEventsModal();
+
