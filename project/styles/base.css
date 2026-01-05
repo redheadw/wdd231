@@ -301,6 +301,7 @@ figcaption{ color: var(--muted); margin-top: .35rem; }
   padding: 1rem;
   box-shadow: var(--shadow);
 }
+.modal[hidden] { display: none; }
 
 .site-footer{
   max-width: var(--max);
