@@ -24,6 +24,7 @@ function setupEventsModal() {
   const closeBtn = document.querySelector("#closeModal");
   const list = document.querySelector("#eventsList");
 
+  // If you’re not on the home page, do nothing.
   if (!eventBtn || !modal || !closeBtn || !list) return;
 
   const events = [
@@ -32,27 +33,35 @@ function setupEventsModal() {
     { date: "Feb 28", title: "Winter Business Expo" }
   ];
 
-  function renderEvents() {
+  function openModal() {
     list.innerHTML = events
       .map(e => `<li><strong>${e.date}:</strong> ${e.title}</li>`)
       .join("");
+    modal.hidden = false;
   }
 
-  eventBtn.addEventListener("click", () => {
-    renderEvents();
-    modal.hidden = false;
-  });
-
-  closeBtn.addEventListener("click", () => {
+  function closeModal() {
     modal.hidden = true;
+  }
+
+  eventBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal();
   });
 
+  closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeModal();
+  });
+
+  // Click outside modal-content closes it
   modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.hidden = true;
+    if (e.target === modal) closeModal();
   });
 
+  // Escape key closes it
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !modal.hidden) modal.hidden = true;
+    if (e.key === "Escape" && !modal.hidden) closeModal();
   });
 }
 
