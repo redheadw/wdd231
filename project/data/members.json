@@ -1,0 +1,64 @@
+{
+  "members": [
+    {
+      "name": "River City Coffee",
+      "category": "Food & Drink",
+      "address": "101 Main St, Springfield",
+      "phone": "555-0101",
+      "website": "https://example.com",
+      "level": "gold",
+      "image": "images/spot1.webp",
+      "description": "Local roaster with community events and catering."
+    },
+    {
+      "name": "Evergreen Dental",
+      "category": "Health",
+      "address": "220 Oak Ave, Springfield",
+      "phone": "555-0110",
+      "website": "https://example.com",
+      "level": "silver",
+      "image": "images/spot2.webp",
+      "description": "Family dental practice offering flexible scheduling."
+    },
+    {
+      "name": "Precision Auto Repair",
+      "category": "Services",
+      "address": "77 Elm Rd, Springfield",
+      "phone": "555-0122",
+      "website": "https://example.com",
+      "level": "nonprofit",
+      "image": "images/spot3.webp",
+      "description": "Reliable auto repair with transparent estimates."
+    },
+    {
+      "name": "Summit Accounting",
+      "category": "Professional",
+      "address": "15 Market Blvd, Springfield",
+      "phone": "555-0133",
+      "website": "https://example.com",
+      "level": "gold",
+      "image": "images/spot2.webp",
+      "description": "Bookkeeping, payroll, and tax planning for small business."
+    },
+    {
+      "name": "Bluebird Boutique",
+      "category": "Retail",
+      "address": "309 Pine St, Springfield",
+      "phone": "555-0144",
+      "website": "https://example.com",
+      "level": "silver",
+      "image": "images/spot1.webp",
+      "description": "Hand-picked apparel and gifts from local makers."
+    },
+    {
+      "name": "Community Arts Network",
+      "category": "Non-Profit",
+      "address": "88 Center Plaza, Springfield",
+      "phone": "555-0155",
+      "website": "https://example.com",
+      "level": "nonprofit",
+      "image": "images/spot3.webp",
+      "description": "Supporting arts programs and youth workshops."
+    }
+  ]
+}

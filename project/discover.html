@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Discover Springfield history, demographics, events, and local landmarks." />
+  <title>Springfield Chamber of Commerce | Discover</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/discover.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">🏛️</div>
+      <div>
+        <p class="site-title">Springfield Chamber of Commerce</p>
+        <p class="tagline">Connect • Grow • Thrive</p>
+      </div>
+    </div>
+
+    <button id="menuButton" class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <nav id="primaryNav" class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="discover.html" aria-current="page">Discover</a>
+      <a href="directory.html">Directory</a>
+      <a href="join.html">Join</a>
+      <a href="references.html">References</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="card">
+      <h1>Discover Springfield</h1>
+      <p id="visitMessage" class="muted"></p>
+    </section>
+
+    <section class="grid-2">
+      <article class="card">
+        <h2>Locale History</h2>
+        <p>
+          Springfield grew from a small trading post into a regional hub for manufacturing and healthcare.
+          Today, local businesses drive innovation and community involvement.
+        </p>
+        <p class="muted">Replace with your town’s real history (cite sources on References page).</p>
+      </article>
+
+      <article class="card">
+        <h2>Current Demographics</h2>
+        <ul class="facts">
+          <li><strong>Median age:</strong> 36.8</li>
+          <li><strong>Median household income:</strong> $58,200</li>
+          <li><strong>Commute:</strong> 22 minutes average</li>
+        </ul>
+        <p class="muted">Replace with real stats and cite.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Current Events</h2>
+      <ul class="events">
+        <li><strong>Jan 20:</strong> Small Business Workshop</li>
+        <li><strong>Feb 8:</strong> Community Volunteer Day</li>
+        <li><strong>Feb 28:</strong> Winter Business Expo</li>
+      </ul>
+      <p class="muted">Update with real local events (or realistic fictitious ones).</p>
+    </section>
+
+    <section class="card">
+      <h2>Landmarks Montage</h2>
+      <div class="montage">
+        <figure>
+          <img src="images/montage1.webp" alt="Historic courthouse building" loading="lazy" width="600" height="400">
+          <figcaption>Historic Courthouse</figcaption>
+        </figure>
+        <figure>
+          <img src="images/montage2.webp" alt="City park in winter" loading="lazy" width="600" height="400">
+          <figcaption>Riverside Park</figcaption>
+        </figure>
+        <figure>
+          <img src="images/montage3.webp" alt="Local museum entrance" loading="lazy" width="600" height="400">
+          <figcaption>City Museum</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Springfield Chamber of Commerce • WDD 131</p>
+    <p>Last modified: <span id="modified"></span></p>
+  </footer>
+</body>
+</html>

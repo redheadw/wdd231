@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Join the chamber: benefits, membership levels, and application form." />
+  <title>Springfield Chamber of Commerce | Join</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">🏛️</div>
+      <div>
+        <p class="site-title">Springfield Chamber of Commerce</p>
+        <p class="tagline">Connect • Grow • Thrive</p>
+      </div>
+    </div>
+
+    <button id="menuButton" class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <nav id="primaryNav" class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="discover.html">Discover</a>
+      <a href="directory.html">Directory</a>
+      <a href="join.html" aria-current="page">Join</a>
+      <a href="references.html">References</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="card" id="levels">
+      <h1>Join the Chamber</h1>
+      <p>Membership helps you grow through visibility, training, networking, and advocacy.</p>
+
+      <div class="levels">
+        <article class="level">
+          <h2>Non-Profit</h2>
+          <p class="price">$100 / year</p>
+          <ul>
+            <li>Basic directory listing</li>
+            <li>Event invitations</li>
+            <li>Quarterly newsletter</li>
+          </ul>
+        </article>
+
+        <article class="level">
+          <h2>Silver</h2>
+          <p class="price">$300 / year</p>
+          <ul>
+            <li>Enhanced directory listing</li>
+            <li>Training discounts</li>
+            <li>Social media shoutouts</li>
+            <li>Networking luncheons</li>
+          </ul>
+        </article>
+
+        <article class="level">
+          <h2>Gold</h2>
+          <p class="price">$600 / year</p>
+          <ul>
+            <li>Premium spotlight rotation</li>
+            <li>Sponsorship priority</li>
+            <li>Advertising package</li>
+            <li>Featured newsletter placement</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Membership Application</h2>
+
+      <form id="joinForm" class="form" method="get" action="thankyou.html">
+        <div class="form-grid">
+          <label>
+            First Name*
+            <input name="fname" required autocomplete="given-name" />
+          </label>
+
+          <label>
+            Last Name*
+            <input name="lname" required autocomplete="family-name" />
+          </label>
+
+          <label>
+            Title/Position
+            <input name="title" autocomplete="organization-title" />
+          </label>
+
+          <label>
+            Email*
+            <input name="email" type="email" required autocomplete="email" />
+          </label>
+
+          <label>
+            Mobile Phone*
+            <input name="phone" type="tel" required autocomplete="tel" />
+          </label>
+
+          <label>
+            Business/Organization Name*
+            <input name="bizname" required autocomplete="organization" />
+          </label>
+
+          <label class="full">
+            Business Address
+            <input name="address" autocomplete="street-address" />
+          </label>
+
+          <label>
+            Website
+            <input name="website" type="url" placeholder="https://example.com" />
+          </label>
+
+          <label>
+            Membership Level*
+            <select name="level" id="levelSelect" required>
+              <option value="">Select...</option>
+              <option value="nonprofit">Non-Profit</option>
+              <option value="silver">Silver</option>
+              <option value="gold">Gold</option>
+            </select>
+          </label>
+
+          <label class="full">
+            Business Description
+            <textarea name="description" rows="4" maxlength="500"></textarea>
+          </label>
+
+          <input type="hidden" id="timestamp" name="timestamp" />
+        </div>
+
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Submit Application</button>
+          <p class="muted" id="formHint"></p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Springfield Chamber of Commerce • WDD 131</p>
+    <p>Last modified: <span id="modified"></span></p>
+  </footer>
+</body>
+</html>
