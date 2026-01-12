@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Chamber of Commerce home page with community info, weather, calls to action, and member spotlights." />
-  <meta name="author" content="Gwyn Wright" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Owasso Chamber of Commerce home page with community info, weather, and member spotlights.">
+  <meta name="author" content="Gwyn Wright">
+
   <title>Owasso Chamber of Commerce | Home</title>
-  <link rel="stylesheet" href="styles/base.css" />
-  <link rel="stylesheet" href="styles/larger.css" />
+
+  <link rel="icon" href="images/favicon.ico.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
   <script src="scripts/main.js" defer></script>
   <script src="scripts/weather.js" defer></script>
 </head>
@@ -24,7 +34,7 @@
       </div>
     </div>
 
-    <button id="menuButton" class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <button id="menuButton" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
 
     <nav id="primaryNav" class="nav" aria-label="Primary navigation">
       <a href="index.html" aria-current="page">Home</a>
@@ -35,21 +45,15 @@
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" class="page">
     <section class="hero">
-      <h2 class="visually-hidden">Welcome</h2>
-      <picture>
-        <img src="images/C:\Software Portfolio\wdd231\images\Cenntinial_park.jpg" alt="Owasso" loading="lazy" width="1200" height="600">
-      </picture>
-
-      <div class="hero-content">
-        <h1>Build Business Momentum in Owasso</h1>
-        <p>Events, resources, and partnerships to help local organizations succeed.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="join.html">Join the Chamber</a>
-          <a class="btn" href="directory.html">Browse the Directory</a>
-        </div>
+      <h1>Build Business Momentum in Owasso</h1>
+      <p>Events, resources, and partnerships to help local organizations succeed.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="join.html">Join the Chamber</a>
+        <a class="btn" href="directory.html">Browse the Directory</a>
       </div>
+      <img src="images/centennial-park.jpg" alt="Centennial Park in Owasso" loading="lazy" width="1200" height="600">
     </section>
 
     <section class="grid-2">
@@ -60,7 +64,6 @@
           <li><strong>Top industries:</strong> Professional Services, Entertainment, Retail</li>
           <li><strong>Next big event:</strong> Gathering on Main</li>
         </ul>
-        <p class="muted"></p>
       </article>
 
       <article class="card" aria-live="polite">
@@ -75,43 +78,16 @@
     </section>
 
     <section class="card">
-      <h2>Calls to Action</h2>
-      <div class="cta-cards">
-        <div class="mini">
-          <h3>Attend a Networking Lunch</h3>
-          <p>Meet local leaders and build partnerships.</p>
-          <button class="btn small" id="eventBtn">View This Month’s Events</button>
-        </div>
-        <div class="mini">
-          <h3>Get Member Resources</h3>
-          <p>Workshops, newsletters, and business support.</p>
-          <a class="btn small" href="discover.html">Explore Owasso</a>
-        </div>
-        <div class="mini">
-          <h3>Become a Sponsor</h3>
-          <p>Put your brand in front of the community.</p>
-          <a class="btn small" href="join.html#levels">See Membership Levels</a>
-        </div>
-      </div>
-      <div id="eventsModal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="eventsTitle">
-        <div class="modal-content">
-          <h3 id="eventsTitle">This Month’s Events</h3>
-          <ul id="eventsList"></ul>
-          <button class="btn" id="closeModal" type="button">Close</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
       <h2>Member Spotlights</h2>
       <div id="spotlights" class="spotlights" aria-live="polite"></div>
-      <p class="muted">Spotlights are randomly selected Gold/Silver members from your directory data.</p>
+      <p class="muted">Spotlights are randomly selected from directory members.</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Owasso Chamber of Commerce • WDD 231</p>
+    <p>© <span id="year"></span> Owasso Chamber of Commerce • Gwyn Wright • WDD 231</p>
     <p>Last modified: <span id="modified"></span></p>
   </footer>
 </body>
 </html>
+

@@ -38,6 +38,17 @@ img{ max-width:100%; height:auto; display:block; border-radius: 10px; }
 a{ color: var(--link); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
+/* Better keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline: 3px solid rgba(31,111,154,.7);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
 /* =========================
    ACCESSIBILITY
 ========================= */
@@ -101,6 +112,7 @@ a:hover{ text-decoration: underline; }
   padding:.65rem;
   box-shadow: var(--shadow);
   min-width: 180px;
+  z-index: 50;
 }
 
 .nav.open{ display:flex; }
@@ -203,6 +215,105 @@ main{
 }
 
 .btn.small{ padding:.45rem .7rem; font-size:.95rem; }
+
+/* =========================
+   DIRECTORY CONTROLS (NEW)
+========================= */
+.controls{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+  margin-top: .75rem;
+}
+
+.control-group{
+  display:grid;
+  gap: .35rem;
+}
+
+.control-group label{
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+/* =========================
+   DIRECTORY GRID / LIST (NEW)
+========================= */
+.directory{
+  margin: 1rem 0 2rem;
+}
+
+/* grid view (default) */
+.directory.grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* list view */
+.directory.list{
+  display:block;
+}
+
+/* member card for grid */
+.member-card{
+  background: rgba(255,255,255,.90);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  display:grid;
+  gap: .5rem;
+}
+
+.member-card img{
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.10);
+  background: var(--surface);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.member-card h2{
+  margin: .25rem 0 0;
+  font-size: 1.1rem;
+}
+
+.member-card p{
+  margin: 0;
+  color: var(--muted);
+}
+
+.badge{
+  display:inline-block;
+  width: fit-content;
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(127,200,169,.25);
+}
+
+/* list row */
+.member-row{
+  background: rgba(255,255,255,.90);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  margin-bottom: .75rem;
+}
+
+.member-row h2{
+  margin: 0 0 .25rem;
+  font-size: 1.05rem;
+}
+
+.member-row .meta{
+  margin: .15rem 0;
+  color: var(--muted);
+}
 
 /* =========================
    TEXT HELPERS
