@@ -1,13 +1,7 @@
 "use strict";
 
-/* =========================
-   CONFIG
-========================= */
-const DATA_URL = "data/members.json";
+const DATA_URL = "./data/members.json";
 
-/* =========================
-   ELEMENTS
-========================= */
 const directoryEl = document.querySelector("#directory");
 const statusEl = document.querySelector("#dirStatus");
 const gridBtn = document.querySelector("#gridBtn");
@@ -18,14 +12,14 @@ const searchInput = document.querySelector("#search");
 let members = [];
 let currentView = "grid";
 
-/* =========================
-   FETCH DATA
-========================= */
 async function loadMembers() {
   try {
     const res = await fetch(DATA_URL);
-    if (!res.ok) throw new Error("Failed to load members");
-    members = await res.json();
+    if (!res.ok) throw new Error(`Failed to load members: ${res.status}`);
+
+    const data = await res.json();
+    members = data.members;
+
     buildCategoryOptions(members);
     renderMembers(members);
     statusEl.textContent = `${members.length} members loaded.`;
@@ -35,9 +29,6 @@ async function loadMembers() {
   }
 }
 
-/* =========================
-   RENDER
-========================= */
 function renderMembers(list) {
   directoryEl.innerHTML = "";
 
@@ -48,11 +39,10 @@ function renderMembers(list) {
 
   list.forEach((m) => {
     const card = document.createElement("article");
-    card.className =
-      currentView === "grid" ? "member-card" : "member-row";
+    card.className = currentView === "grid" ? "member-card" : "member-row";
 
     card.innerHTML = `
-      <img src="images/${m.image}" alt="${m.name}" loading="lazy">
+      <img src="${m.image}" alt="${m.name}" loading="lazy">
       <h2>${m.name}</h2>
       <p class="meta">${m.address}</p>
       <p class="meta">${m.phone}</p>
@@ -64,9 +54,6 @@ function renderMembers(list) {
   });
 }
 
-/* =========================
-   CONTROLS
-========================= */
 function setView(view) {
   currentView = view;
   directoryEl.className = `directory ${view}`;
@@ -74,6 +61,7 @@ function setView(view) {
 }
 
 function buildCategoryOptions(list) {
+  categorySelect.innerHTML = `<option value="all">All</option>`;
   const cats = [...new Set(list.map((m) => m.category))].sort();
   cats.forEach((cat) => {
     const opt = document.createElement("option");
@@ -93,26 +81,14 @@ function getFilteredMembers() {
       m.category.toLowerCase().includes(term);
 
     const matchesCat = cat === "all" || m.category === cat;
-
     return matchesText && matchesCat;
   });
 }
 
-/* =========================
-   EVENTS
-========================= */
 gridBtn.addEventListener("click", () => setView("grid"));
 listBtn.addEventListener("click", () => setView("list"));
+categorySelect.addEventListener("change", () => renderMembers(getFilteredMembers()));
+searchInput.addEventListener("input", () => renderMembers(getFilteredMembers()));
 
-categorySelect.addEventListener("change", () => {
-  renderMembers(getFilteredMembers());
-});
-
-searchInput.addEventListener("input", () => {
-  renderMembers(getFilteredMembers());
-});
-
-/* =========================
-   INIT
-========================= */
 loadMembers();
+

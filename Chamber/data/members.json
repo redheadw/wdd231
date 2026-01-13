@@ -7,7 +7,7 @@
       "phone": "555-0101",
       "website": "https://example.com",
       "level": "gold",
-      "image": "images/spot1.webp",
+      "image": "images/cityHall.jpg",
       "description": "Local roaster with community events and catering."
     },
     {
@@ -17,7 +17,7 @@
       "phone": "555-0110",
       "website": "https://example.com",
       "level": "silver",
-      "image": "images/spot2.webp",
+      "image": "images/cityHall.jpg",
       "description": "Family dental practice offering flexible scheduling."
     },
     {
@@ -27,7 +27,7 @@
       "phone": "555-0122",
       "website": "https://example.com",
       "level": "nonprofit",
-      "image": "images/spot3.webp",
+      "image": "images/cityHall.jpg",
       "description": "Reliable auto repair with transparent estimates."
     },
     {
@@ -37,7 +37,7 @@
       "phone": "555-0133",
       "website": "https://example.com",
       "level": "gold",
-      "image": "images/spot2.webp",
+      "image": "images/cityHall.jpg",
       "description": "Bookkeeping, payroll, and tax planning for small business."
     },
     {
@@ -47,7 +47,7 @@
       "phone": "555-0144",
       "website": "https://example.com",
       "level": "silver",
-      "image": "images/spot1.webp",
+      "image": "images/cityHall.jpg",
       "description": "Hand-picked apparel and gifts from local makers."
     },
     {
@@ -57,7 +57,7 @@
       "phone": "555-0155",
       "website": "https://example.com",
       "level": "nonprofit",
-      "image": "images/spot3.webp",
+      "image": "images/cityHall.jpg",
       "description": "Supporting arts programs and youth workshops."
     }
   ]
