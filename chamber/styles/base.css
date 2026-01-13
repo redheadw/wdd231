@@ -2,21 +2,24 @@
    THEME VARIABLES
 ========================= */
 :root{
-  --bg: #f6f9f7;          /* cream */
-  --surface: #e9f4f6;     /* sky blue */
-  --card: #ffffff;       /* white */
+  --bg: #f6f9f7;
+  --surface: #e9f4f6;
+  --card: #ffffff;
 
-  --text: #1f2d2b;       /* dark green-gray */
-  --muted: #3f5f59;      /* darker muted for contrast */
+  --text: #1f2d2b;
+  --muted: #3f5f59;
 
-  --accent: #7fc8a9;     /* light green */
-  --link: #1f6f9a;       /* deeper sky blue */
+  --accent: #7fc8a9;
+  --link: #1f6f9a;
+
+  --brand: #1f6f9a; 
 
   --radius: 14px;
   --shadow: 0 8px 20px rgba(0,0,0,.12);
   --max: 1100px;
   --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
+
 
 html{ color-scheme: light; }
 
