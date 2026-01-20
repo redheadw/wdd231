@@ -31,8 +31,7 @@ function setupHamburgerMenu() {
   });
 }
 
-/**
- * Requires: #eventBtn, #eventsModal, #closeModal, #eventsList
+/* Requires: #eventBtn, #eventsModal, #closeModal, #eventsList
  */
 function setupEventsModal() {
   const eventBtn = document.querySelector("#eventBtn");
