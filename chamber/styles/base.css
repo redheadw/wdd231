@@ -190,8 +190,8 @@ main{
   );
 }
 
-.hero h1,
-.hero p{ color:#fff; }
+.hero-content h1,
+.hero-content p { color: #fff; }
 
 /* =========================
    BUTTONS
