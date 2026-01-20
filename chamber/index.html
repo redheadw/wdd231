@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Owasso Chamber of Commerce home page with community info, weather, and member spotlights.">
+  <meta name="description" content="Owasso Chamber of Commerce home page with community info, events, weather, and member spotlights.">
   <meta name="author" content="Gwyn Wright">
 
   <title>Owasso Chamber of Commerce | Home</title>
 
   <link rel="icon" href="images/favicon.png" type="image/png">
->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +19,8 @@
   <link rel="stylesheet" href="styles/larger.css">
 
   <script src="scripts/main.js" defer></script>
-  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/weatherscripts/weather.js" defer></script>
+  <script src="scripts/spotlights.js" defer></script>
 </head>
 
 <body>
@@ -47,41 +47,68 @@
   </header>
 
   <main id="main" class="page">
+    <!-- HERO -->
     <section class="hero">
-      <h1>Build Business Momentum in Owasso</h1>
-      <p>Events, resources, and partnerships to help local organizations succeed.</p>
-      <div class="cta-row">
-        <a class="btn primary" href="join.html">Join the Chamber</a>
-        <a class="btn" href="directory.html">Browse the Directory</a>
+      <img src="images/cenntiniaPark.jpg" alt="Centennial Park in Owasso" loading="lazy" width="1200" height="600">
+      <div class="hero-content">
+        <h1>Build Business Momentum in Owasso</h1>
+        <p>Events, resources, and partnerships to help local organizations succeed.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="join.html">Join the Chamber</a>
+          <a class="btn" href="directory.html">Browse the Directory</a>
+        </div>
       </div>
-      <img src="images/centennialPark.jpg" alt="Centennial Park in Owasso" loading="lazy" width="1200" height="600">
     </section>
 
+    <!-- MAIN GRID -->
     <section class="grid-2">
+      <!-- CURRENT EVENTS -->
       <article class="card">
-        <h2>Community Snapshot</h2>
+        <h2>Current Events</h2>
         <ul class="facts">
-          <li><strong>Population:</strong> 38,240</li>
-          <li><strong>Top industries:</strong> Professional Services, Entertainment, Retail</li>
-          <li><strong>Next big event:</strong> Gathering on Main</li>
+          <li><strong>Jan 20:</strong> Small Business Workshop</li>
+          <li><strong>Feb 8:</strong> Community Volunteer Day</li>
+          <li><strong>Feb 28:</strong> Winter Business Expo</li>
         </ul>
+        <a class="btn small" href="discover.html">See more community info</a>
       </article>
 
+      <!-- WEATHER -->
       <article class="card" aria-live="polite">
         <h2>Weather</h2>
         <p id="weatherStatus" class="muted">Loading weather…</p>
+
         <div id="weatherBox" class="weather" hidden>
-          <p class="temp"><span id="temp"></span>°</p>
-          <p><span id="condition"></span></p>
-          <p class="muted">Humidity: <span id="humidity"></span>%</p>
+          <div>
+            <p class="temp"><span id="temp"></span>°F</p>
+            <p class="condition"><span id="condition"></span></p>
+            <p class="muted">Humidity: <span id="humidity"></span>%</p>
+          </div>
+        </div>
+
+        <h3 class="subhead">3-Day Forecast</h3>
+        <div id="forecast" class="forecast" hidden>
+          <div class="forecast-day">
+            <p class="day" id="day1"></p>
+            <p class="forecast-temp"><span id="t1"></span>°F</p>
+          </div>
+          <div class="forecast-day">
+            <p class="day" id="day2"></p>
+            <p class="forecast-temp"><span id="t2"></span>°F</p>
+          </div>
+          <div class="forecast-day">
+            <p class="day" id="day3"></p>
+            <p class="forecast-temp"><span id="t3"></span>°F</p>
+          </div>
         </div>
       </article>
     </section>
 
+    <!-- SPOTLIGHTS -->
     <section class="card">
       <h2>Member Spotlights</h2>
       <div id="spotlights" class="spotlights" aria-live="polite"></div>
-      <p class="muted">Spotlights are randomly selected from directory members.</p>
+      <p class="muted">Spotlights are randomly selected from Gold and Silver members.</p>
     </section>
   </main>
 
@@ -91,4 +118,3 @@
   </footer>
 </body>
 </html>
-

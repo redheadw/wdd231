@@ -6,20 +6,17 @@
   --surface: #e9f4f6;
   --card: #ffffff;
 
-  --text: #1f2d2b;
-  --muted: #3f5f59;
+  --text: #152321;
+  --muted: #2f4c47;
 
   --accent: #7fc8a9;
-  --link: #1f6f9a;
-
-  --brand: #1f6f9a; 
-
+  --link: #0f5f85;
+  --brand: #0f5f85;
   --radius: 14px;
   --shadow: 0 8px 20px rgba(0,0,0,.12);
   --max: 1100px;
-  --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
-
 
 html{ color-scheme: light; }
 
@@ -136,9 +133,14 @@ textarea:focus-visible{
 ========================= */
 main{
   max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 1rem 2rem;
+  margin: 1rem auto;
+  padding: 1rem;
+
+  border: 4px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--bg);
 }
+
 
 .card{
   background: rgba(255,255,255,.90);
@@ -213,6 +215,8 @@ main{
 .btn.primary {
   background-color: var(--brand);
   border-color: color-mix(in srgb, var(--brand), black 15%);
+  color: #fff;             
+  font-weight: 700;  
 }
 
 
@@ -260,7 +264,7 @@ main{
 
 /* member card for grid */
 .member-card{
-  background: rgba(255,255,255,.90);
+  background: var(--card);
   border: 1px solid rgba(0,0,0,.10);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -334,6 +338,42 @@ main{
   gap: 1rem;
 }
 .temp{ font-size: 2.2rem; font-weight: 900; }
+
+/* =========================
+   FORECAST 
+========================= */
+.subhead{
+  margin: 1rem 0 .5rem;
+  font-size: 1rem;
+}
+
+.forecast{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+  margin-top: .5rem;
+}
+
+.forecast-day{
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 12px;
+  padding: .6rem;
+  background: var(--surface);
+}
+
+.forecast-day .day{
+  margin: 0;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.forecast-temp{
+  margin: .25rem 0 0;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
 
 /* =========================
    CTA CARDS
