@@ -22,9 +22,7 @@ html{ color-scheme: light; }
 
 *{ box-sizing: border-box; }
 
-/* =========================
-   BASE ELEMENTS
-========================= */
+/* ======   BASE ELEMENTS   ======== */
 body{
   margin:0;
   font-family: var(--font);
@@ -49,9 +47,7 @@ textarea:focus-visible{
   border-radius: 10px;
 }
 
-/* =========================
-   ACCESSIBILITY
-========================= */
+/* ======    ACCESSIBILITY  ======= */
 .skip-link{
   position:absolute; left:-999px; top:0;
   background: var(--accent); color:#000;
@@ -71,9 +67,7 @@ textarea:focus-visible{
   border:0;
 }
 
-/* =========================
-   HEADER / NAV
-========================= */
+/* =======   HEADER / NAV   ========= */
 .site-header{
   display:flex;
   align-items:center;
@@ -128,9 +122,7 @@ textarea:focus-visible{
   border: 1px solid rgba(127,200,169,.70);
 }
 
-/* =========================
-   LAYOUT
-========================= */
+/* ======   LAYOUT   ======== */
 main{
   max-width: var(--max);
   margin: 1rem auto;
@@ -157,9 +149,7 @@ main{
   gap: 1rem;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ======    HERO   ====== */
 .hero{
   position:relative;
   border-radius: var(--radius);
@@ -193,9 +183,7 @@ main{
 .hero-content h1,
 .hero-content p { color: #fff; }
 
-/* =========================
-   BUTTONS
-========================= */
+/* =======   BUTTONS    ====== */
 .btn{
   display:inline-block;
   border: 1px solid rgba(0,0,0,.14);
@@ -222,9 +210,7 @@ main{
 
 .btn.small{ padding:.45rem .7rem; font-size:.95rem; }
 
-/* =========================
-   DIRECTORY CONTROLS (NEW)
-========================= */
+/* =======   DIRECTORY CONTROLS   ======== */
 .controls{
   display:flex;
   flex-wrap: wrap;
@@ -243,9 +229,7 @@ main{
   font-size: .95rem;
 }
 
-/* =========================
-   DIRECTORY GRID / LIST (NEW)
-========================= */
+/* ======   DIRECTORY GRID / LIST  ======== */
 .directory{
   margin: 1rem 0 2rem;
 }
@@ -321,17 +305,13 @@ main{
   color: var(--muted);
 }
 
-/* =========================
-   TEXT HELPERS
-========================= */
+/* ======   TEXT HELPERS     ======= */
 .muted{ color: var(--muted); }
 
 .facts{ padding-left: 1.1rem; }
 .facts li{ margin:.35rem 0; }
 
-/* =========================
-   WEATHER
-========================= */
+/* =======   WEATHER    ====== */
 .weather{
   display:flex;
   align-items:baseline;
@@ -339,9 +319,7 @@ main{
 }
 .temp{ font-size: 2.2rem; font-weight: 900; }
 
-/* =========================
-   FORECAST 
-========================= */
+/* =======   FORECAST  ======= */
 .subhead{
   margin: 1rem 0 .5rem;
   font-size: 1rem;
@@ -375,9 +353,7 @@ main{
 }
 
 
-/* =========================
-   CTA CARDS
-========================= */
+/* ======   CTA CARDS    ===== */
 .cta-cards{
   display:grid;
   grid-template-columns: 1fr;
@@ -394,9 +370,7 @@ main{
 .mini h3{ margin:.2rem 0 .35rem; }
 .mini p{ margin: 0 0 .6rem; color: var(--muted); }
 
-/* =========================
-   SPOTLIGHTS
-========================= */
+/* ======   SPOTLIGHTS   ====== */
 .spotlights{
   display:grid;
   grid-template-columns: 1fr;
@@ -417,9 +391,7 @@ main{
 .spotlight h3{ margin:0; }
 .spotlight p{ margin:.25rem 0; color: var(--muted); }
 
-/* =========================
-   FORMS
-========================= */
+/* ======= FORMS ====== */
 input, select, textarea{
   width: 100%;
   max-width: 360px;
@@ -432,33 +404,56 @@ input, select, textarea{
 
 textarea{ max-width: 100%; }
 
-/* =========================
-   MODAL
-========================= */
-.modal{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.55);
-  display:grid;
-  place-items:center;
-  padding: 1rem;
-}
-
-.modal[hidden]{ display:none; }
-
-.modal-content{
-  width:min(560px, 100%);
-  background: rgba(255,255,255,.97);
-  color: var(--text);
+/* ===== DIALOG MODALS ===== */
+.level-dialog{
+  width: min(620px, 92vw);
   border: 1px solid rgba(0,0,0,.12);
   border-radius: var(--radius);
-  padding: 1rem;
+  padding: 1.25rem 1.25rem 1rem;
   box-shadow: var(--shadow);
+  background: rgba(255,255,255,.98);
 }
 
-/* =========================
-   FOOTER
-========================= */
+.level-dialog::backdrop{
+  background: rgba(0,0,0,.55);
+}
+
+.dialog-close{
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* ===== INITIAL LOAD ANIMATION for membership cards ===== */
+@keyframes popIn{
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.levels .level{
+  opacity: 0;
+  animation: popIn .6s ease-out forwards;
+}
+
+.levels .level:nth-child(1){ animation-delay: .05s; }
+.levels .level:nth-child(2){ animation-delay: .12s; }
+.levels .level:nth-child(3){ animation-delay: .19s; }
+.levels .level:nth-child(4){ animation-delay: .26s; }
+
+.level-link{
+  display:inline-block;
+  margin-top: .5rem;
+  font-weight: 700;
+}
+
+
+/* =====    FOOTER   ==== */
 .site-footer{
   max-width: var(--max);
   margin: 0 auto;

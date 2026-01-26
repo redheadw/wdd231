@@ -12,16 +12,48 @@ function setupMembershipHint() {
   if (!levelSelect || !hint) return;
 
   const perks = {
-    nonprofit: "Non-Profit includes basic listing and event invitations.",
-    silver: "Silver adds training discounts, shoutouts, and luncheons.",
-    gold: "Gold adds premium spotlights, sponsorship priority, and advertising."
+    np: "NP: basic listing + event invitations.",
+    bronze: "Bronze: listing + ribbon cutting + member pricing.",
+    silver: "Silver: adds training discounts + spotlight opportunities.",
+    gold: "Gold: adds premium spotlights + sponsorship priority + advertising."
   };
 
   levelSelect.addEventListener("change", () => {
-    const value = levelSelect.value;
-    hint.textContent = value ? `${perks[value]}` : "";
+    hint.textContent = levelSelect.value ? perks[levelSelect.value] : "";
+  });
+}
+
+function setupLevelModals() {
+  // Links 
+  const openLinks = document.querySelectorAll("[data-open]");
+
+  openLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = link.getAttribute("data-open");
+      const dlg = document.getElementById(id);
+      if (dlg) dlg.showModal();
+    });
+  });
+
+  // Close logic for each dialog
+  const dialogs = document.querySelectorAll("dialog.level-dialog");
+
+  dialogs.forEach((dlg) => {
+    const closeBtn = dlg.querySelector(".dialog-close");
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => dlg.close());
+    }
+
+    // Click outside the modal content closes it
+    dlg.addEventListener("click", (e) => {
+      if (e.target === dlg) dlg.close();
+    });
   });
 }
 
 setTimestamp();
 setupMembershipHint();
+setupLevelModals();
+
