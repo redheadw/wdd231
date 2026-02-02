@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Discover Springfield history, demographics, events, and local landmarks." />
+  <meta name="description" content="Discover Owasso, Oklahoma: demographics, events, and local places worth visiting." />
   <title>Owasso Chamber of Commerce | Discover</title>
+
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/larger.css" />
+
   <script src="scripts/main.js" defer></script>
-  <script src="scripts/discover.js" defer></script>
+  
+  <script src="scripts/discover.js" type="module" defer></script>
 </head>
 
 <body>
@@ -34,58 +37,42 @@
     </nav>
   </header>
 
-  <main id="main">
-    <section class="card">
+  <main id="main" class="discover">
+    <!-- visitor -->
+    <section class="card discover-hero">
       <h1>Discover Owasso</h1>
-      <p id="visitMessage" class="muted"></p>
+      <p class="muted">Explore community highlights, places to visit, and local facts.</p>
+
+      <div class="visit" role="status" aria-live="polite">
+        <p id="visitMessage" class="visit__text"></p>
+        <button id="closeVisit" class="visit__close" type="button" aria-label="Close message">✕</button>
+      </div>
     </section>
 
-    <section class="grid-2">
+    <section class="grid-2 discover-facts">
       <article class="card">
-        <h2>Locale History</h2>
-        <p>
-          Owasso grew from a small town at the end of the trail of tears into a triving suburb of Tulsa, Ok. 
-        </p>
-        <p class="muted">Find something about Owasso</p>
+        <h2>Local Snapshot</h2>
+        <ul class="facts">
+          <li><strong>Region:</strong> Tulsa Metro</li>
+          <li><strong>Known for:</strong> family-friendly parks, schools, and local business growth</li>
+          <li><strong>Quick drive:</strong> easy access to Tulsa</li>
+        </ul>
+        <p class="muted">Update any details to match your research sources.</p>
       </article>
 
       <article class="card">
-        <h2>Current Demographics</h2>
+        <h2>Demographics</h2>
         <ul class="facts">
           <li><strong>Median age:</strong> 33.6</li>
           <li><strong>Median household income:</strong> $79,386</li>
-          <li><strong>Commute:</strong> 23 minutes average</li>
+          <li><strong>Average commute:</strong> 23 minutes</li>
         </ul>
-        <p class="muted"></p>
+        <p class="muted">Cite your demographic source on the References page.</p>
       </article>
     </section>
 
-    <section class="card">
-      <h2>Current Events</h2>
-      <ul class="events">
-        <li><strong>Jan 20:</strong> Small Business Workshop</li>
-        <li><strong>Feb 8:</strong> Community Volunteer Day</li>
-        <li><strong>Feb 28:</strong> Gathering on Main</li>
-      </ul>
-      <p class="muted">Update with events</p>
-    </section>
-
-    <section class="card">
-      <h2>Landmarks Montage</h2>
-      <div class="montage">
-        <figure>
-          <img src="images/seal.jpg" alt="city" loading="lazy" width="600" height="400">
-          <figcaption>City of Owasso</figcaption>
-        </figure>
-        <figure>
-          <img src="images/funtastic_park.jpg" alt="City park " loading="lazy" width="600" height="400">
-          <figcaption>Funtastic Park</figcaption>
-        </figure>
-        <figure>
-          <img src="images/high_school.jpg" alt="school" loading="lazy" width="600" height="400">
-          <figcaption>Owasso Public School</figcaption>
-        </figure>
-      </div>
+    <!-- Cards discover.js -->
+    <section class="discover-grid" aria-label="Places to explore">
     </section>
   </main>
 

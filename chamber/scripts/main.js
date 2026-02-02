@@ -1,10 +1,6 @@
 "use strict";
 
-/**
- * Requires these elements in the HTML:
- *   <span id="year"></span>
- *   <span id="modified"></span>
- */
+
 function setFooterMeta() {
   const yearEl = document.querySelector("#year");
   const modifiedEl = document.querySelector("#modified");
@@ -13,12 +9,7 @@ function setFooterMeta() {
   if (modifiedEl) modifiedEl.textContent = document.lastModified;
 }
 
-/**
- * Toggles the mobile navigation menu open/closed.
- * Requires:
- *   button#menuButton
- *   nav#primaryNav
- */
+/* Toggles the mobile navigation menu open/closed.  */
 function setupHamburgerMenu() {
   const button = document.querySelector("#menuButton");
   const nav = document.querySelector("#primaryNav");
@@ -31,8 +22,7 @@ function setupHamburgerMenu() {
   });
 }
 
-/* Requires: #eventBtn, #eventsModal, #closeModal, #eventsList
- */
+/* Requires: #eventBtn, #eventsModal, #closeModal, #eventsList */
 function setupEventsModal() {
   const eventBtn = document.querySelector("#eventBtn");
   const modal = document.querySelector("#eventsModal");
@@ -80,9 +70,7 @@ function setupEventsModal() {
   });
 }
 
-/**
- * Initialize shared site behaviors.
-  */
+/* Initialize shared site behaviors. */
 setFooterMeta();
 setupHamburgerMenu();
 setupEventsModal();

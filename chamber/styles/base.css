@@ -452,6 +452,65 @@ textarea{ max-width: 100%; }
   font-weight: 700;
 }
 
+/* ===== Discover Page ===== */
+.discover .visit{
+  margin-top: 1rem;
+  padding: .75rem 1rem;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.75);
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.visit__text{ margin: 0; }
+.visit__close{
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.discover-grid{
+  display: grid;
+  gap: 1rem;
+  /* Small layout uses grid areas, not just columns */
+  grid-template-areas:
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h";
+}
+
+.place-1{ grid-area: a; }
+.place-2{ grid-area: b; }
+.place-3{ grid-area: c; }
+.place-4{ grid-area: d; }
+.place-5{ grid-area: e; }
+.place-6{ grid-area: f; }
+.place-7{ grid-area: g; }
+.place-8{ grid-area: h; }
+
+.place__figure{
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.place__figure img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 /* =====    FOOTER   ==== */
 .site-footer{

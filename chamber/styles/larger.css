@@ -63,4 +63,43 @@
   .levels{
     grid-template-columns: repeat(3, 1fr);
   }
+
+  /*===    DISCOVER GRID AREAS ===*/
+
+/* MEDIUM: 641–1024px */
+@media (min-width: 641px) and (max-width: 1024px){
+  .discover-grid{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e e"
+      "f g"
+      "h h";
+  }
+}
+
+/* LARGE: 1025px+ */
+@media (min-width: 1025px){
+  .discover-grid{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "a a b"
+      "c d b"
+      "e f g"
+      "h h h";
+  }
+}
+
+/* Hover effect ONLY non-mobile */
+@media (min-width: 641px){
+  .place__figure img{
+    transition: transform .2s ease, filter .2s ease;
+  }
+  .place:hover .place__figure img{
+    transform: scale(1.03);
+    filter: contrast(1.05) saturate(1.05);
+  }
+}
+
 }
