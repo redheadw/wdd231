@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Site plan for Chat Connect - a friendly chatroom platform with local and USA-wide discovery." />
+  <meta name="author" content="G S" />
+  <title>Chat Connect | Site Plan</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/siteplan.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">💬</div>
+      <div>
+        <h1>Chat Connect</h1>
+        <p class="tagline">Site Plan / Blueprint</p>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#site-name">Site Name</a></li>
+        <li><a href="#purpose">Purpose</a></li>
+        <li><a href="#scenarios">Scenarios</a></li>
+        <li><a href="#colors">Color Scheme</a></li>
+        <li><a href="#type">Typography</a></li>
+        <li><a href="#structure">Site Structure</a></li>
+        <li><a href="#features">Dynamic Features</a></li>
+        <li><a href="#wireframes">Wireframes</a></li>
+        <li><a href="#testing">Testing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <section class="card" id="site-name">
+      <h2>Site Name</h2>
+      <p><strong>Name:</strong> Chat Connect</p>
+      <p>
+        <strong>Reason:</strong> “Chat” communicates the main purpose immediately, and “Connect” emphasizes
+        friendly conversation and community. The name is simple, memorable, and fits a modern app-style brand.
+      </p>
+      <p class="muted"><strong>Optional domain idea:</strong> chatconnect-site.com</p>
+    </section>
+
+    <section class="card" id="purpose">
+      <h2>Site Purpose</h2>
+      <p>
+        Chat Connect provides a safe, friendly place for people to join chatrooms and connect through conversation.
+        Visitors can register or log in, browse chatrooms, filter by location (within 250 miles), or join USA-wide rooms.
+        The site will expand in the future to support chatting anywhere the service is available.
+      </p>
+      <ul>
+        <li><strong>Home page:</strong> clear entry points (Register / Log In) and links to key info pages.</li>
+        <li><strong>Chatrooms:</strong> discover rooms by local radius or USA-wide categories.</li>
+        <li><strong>Info:</strong> About, FAQ, Privacy, Terms of Use (combined where needed for the 3-page requirement).</li>
+      </ul>
+    </section>
+
+    <section class="card" id="scenarios">
+      <h2>Scenarios</h2>
+      <p>These are common questions a visitor might ask (target audience: people who want to chat, meet others, or find community):</p>
+      <ul>
+        <li><strong>Scenario 1:</strong> “How do I find chatrooms near me within 250 miles?”</li>
+        <li><strong>Scenario 2:</strong> “Are there chatrooms I can join that include people across the USA?”</li>
+        <li><strong>Scenario 3:</strong> “What rules keep Chat Connect safe, and what data do you store?”</li>
+      </ul>
+    </section>
+
+    <section class="card" id="colors">
+      <h2>Color Scheme</h2>
+      <p>
+        The site uses light, happy colors with greens, light & navy blues, and gray for readability.
+        These colors are also used on this site plan page.
+      </p>
+
+      <div class="swatches" role="list">
+        <div class="swatch" role="listitem">
+          <div class="chip chip-bg"></div>
+          <p><strong>Background:</strong> #F6FBFA<br><span class="muted">Used for page background.</span></p>
+        </div>
+
+        <div class="swatch" role="listitem">
+          <div class="chip chip-surface"></div>
+          <p><strong>Surface/Card:</strong> #E9F6F3<br><span class="muted">Used for sections/cards.</span></p>
+        </div>
+
+        <div class="swatch" role="listitem">
+          <div class="chip chip-green"></div>
+          <p><strong>Green Accent:</strong> #6FD3B3<br><span class="muted">Buttons, highlights, icons.</span></p>
+        </div>
+
+        <div class="swatch" role="listitem">
+          <div class="chip chip-blue"></div>
+          <p><strong>Light Blue:</strong> #7CB7E6<br><span class="muted">Links, secondary accents.</span></p>
+        </div>
+
+        <div class="swatch" role="listitem">
+          <div class="chip chip-navy"></div>
+          <p><strong>Navy:</strong> #12324A<br><span class="muted">Headings, nav, strong text.</span></p>
+        </div>
+
+        <div class="swatch" role="listitem">
+          <div class="chip chip-gray"></div>
+          <p><strong>Gray:</strong> #5E6B75<br><span class="muted">Muted text, borders, UI separators.</span></p>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="card" id="type">
+      <h2>Typography</h2>
+      <ul>
+        <li><strong>Headings:</strong> Poppins (600–700) — friendly and modern, easy to scan.</li>
+        <li><strong>Body text:</strong> Nunito (400–700) — fun, readable, and clean.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="structure">
+      <h2>Site Structure</h2>
+      <p><strong>Main navigation links required:</strong> Chatrooms, About, FAQ, Privacy, Terms of Use</p>
+
+      <h3>Three-page requirement (no placeholders)</h3>
+      <p>
+        The course requires 3 total pages. To match that requirement while still including all required content links:
+      </p>
+      <ol>
+        <li><strong>index.html</strong> — Home (Register / Log In buttons + intro + featured chatrooms)</li>
+        <li><strong>chatrooms.html</strong> — Chatroom discovery + filters (Local 250 miles, USA, future: Anywhere)</li>
+        <li><strong>info.html</strong> — About + FAQ + Privacy + Terms of Use (anchored sections)</li>
+      </ol>
+
+      <h3>Home page content requirements</h3>
+      <ul>
+        <li>Header with logo/site name + responsive navigation</li>
+        <li>Hero area with Register and Log In buttons</li>
+        <li>Short “How it works” section</li>
+        <li>Featured chatrooms (dynamic list)</li>
+        <li>Footer with links + attributions + demo video link</li>
+      </ul>
+    </section>
+
+    <section class="card" id="features">
+      <h2>Dynamic Features and Data Plan</h2>
+
+      <h3>Data source (Fetch + JSON)</h3>
+      <ul>
+        <li>Use a local JSON file (example: <code>data/chatrooms.json</code>) with at least <strong>15 chatrooms</strong>.</li>
+        <li>Each chatroom item shows at least <strong>4 properties</strong> (example: name, topic, city/state, memberCount, safetyRating).</li>
+        <li>Use <code>fetch()</code> + <code>async/await</code> and <code>try...catch</code>.</li>
+      </ul>
+
+      <h3>Browser APIs</h3>
+      <ul>
+        <li><strong>Geolocation API:</strong> for “Local within 250 miles” (user can allow/deny).</li>
+        <li><strong>LocalStorage:</strong> remember filter choice (Local / USA) and preferred topics.</li>
+      </ul>
+
+      <h3>Required JS patterns</h3>
+      <ul>
+        <li>DOM selection with <code>querySelector</code>/<code>querySelectorAll</code></li>
+        <li>Event listeners for filter controls, search input, and room cards</li>
+        <li>Array method usage: <code>filter</code> (local radius), <code>map</code> (render cards), <code>forEach</code></li>
+        <li>Template literals to generate chatroom cards</li>
+        <li>ES Modules: separate files like <code>chatrooms.js</code>, <code>storage.js</code>, <code>ui.js</code></li>
+      </ul>
+
+      <h3>Modal dialog requirement</h3>
+      <ul>
+        <li>Clicking a chatroom opens a modal with room details + “Join” button.</li>
+        <li>Modal supports keyboard escape, focus management, and click-outside close.</li>
+      </ul>
+
+      <h3>Performance plan</h3>
+      <ul>
+        <li>Run Lighthouse / PageSpeed checks (Performance, Best Practices, SEO, Accessibility).</li>
+        <li>Optimize images with proper sizing, format, and <code>loading="lazy"</code>.</li>
+        <li>Keep total page weight under 500kB from empty cache.</li>
+      </ul>
+
+      <h3> Complition plan </h3>
+      <ul>
+        <li>Create a simple checklist and timeline (daily goals, commit messages, and deadlines).</li>
+        <li>Write clear README notes for setup and features.</li>
+        <li>Proofread content and keep naming conventions consistent (lowercase, no spaces).</li>
+      </ul>
+    </section>
+
+    <section class="card" id="wireframes">
+      <h2>Wireframes</h2>
+      <p>Simple layout sketches for the <strong>Home page (chatindex.html)</strong>.</p>
+
+      <h3>Mobile View (320px+)</h3>
+      <pre class="wireframe" aria-label="Mobile wireframe sketch">
+┌──────────────────────────────┐
+│ Header: Logo + Site Name     │
+│ [☰]                          │
+├──────────────────────────────┤
+│ Hero                         │
+│ "Chat Connect"               │
+│ short tagline                │
+│ [ Register ] [ Log In ]      │
+├──────────────────────────────┤
+│ How It Works (3 steps)       │
+│ 1. Create account            │
+│ 2. Choose chatrooms          │
+│ 3. Start chatting            │
+├──────────────────────────────┤
+│ Featured Chatrooms (cards)   │
+│ [Room Card]                  │
+│ [Room Card]                  │
+│ [Room Card]                  │
+├──────────────────────────────┤
+│ Footer links + video link    │
+└──────────────────────────────┘
+      </pre>
+
+      <h3>Desktop / Tablet View</h3>
+      <pre class="wireframe" aria-label="Desktop wireframe sketch">
+┌──────────────────────────────────────────────────────────┐
+│ Header: Logo + Name        Nav: Chatrooms About FAQ ...   │
+├──────────────────────────────────────────────────────────┤
+│ Hero: left text + buttons         right: illustration      │
+│ [ Register ] [ Log In ]                                   │
+├──────────────────────────────────────────────────────────┤
+│ 3-column How It Works cards                                │
+├──────────────────────────────────────────────────────────┤
+│ Featured Chatrooms: grid of cards (3-4 across)              │
+├──────────────────────────────────────────────────────────┤
+│ Footer: links + attributions + demo video link              │
+└──────────────────────────────────────────────────────────┘
+      </pre>
+    </section>
+
+    <section class="card" id="testing">
+      <h2>Testing and Evaluation</h2>
+      <ul>
+        <li><strong>HTML Validation:</strong> W3C Markup Validator</li>
+        <li><strong>Accessibility:</strong> WAVE Web Accessibility Evaluation Tool</li>
+        <li><strong>Performance/SEO/Best Practices:</strong> Lighthouse (Chrome DevTools) or PageSpeed Insights</li>
+        <li><strong>Color Contrast:</strong> WebAIM Contrast Checker</li>
+      </ul>
+
+      <blockquote class="quote">
+        “The desire to create is one of the deepest yearnings of the human soul… Everyone can create.”
+        <span class="muted">— Dieter F. Uchtdorf</span>
+      </blockquote>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>Chat Connect</strong> • Site Plan</p>
+  </footer>
+</body>
+</html>
