@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Chat Connect | Discover Chatrooms</title>
+
+  <meta name="description" content="Browse and join friendly chatrooms near you or across the USA on Chat Connect." />
+  <meta name="author" content="G S" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Chat Connect | Chatrooms" />
+  <meta property="og:description" content="Discover local and USA-wide chatrooms on Chat Connect." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-chatconnect.jpg" />
+  <meta property="og:url" content="https://yourusername.github.io/wdd231/final/chatrooms.html" />
+
+  <link rel="icon" href="images/icons/favicon.ico" />
+
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+
+  <!-- ES Modules -->
+  <script type="module" src="scripts/chatrooms.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">💬</span>
+      <h1>Chat Connect</h1>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        ☰ <span class="visually-hidden">Menu</span>
+      </button>
+      <ul id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chatrooms.html" aria-current="page">Chatrooms</a></li>
+        <li><a href="info.html">Info</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <header class="page-header">
+      <h2>Discover Chatrooms</h2>
+      <p>Find friendly conversations near you or across the USA.</p>
+    </header>
+
+    <!-- FILTER CONTROLS -->
+    <section class="filters" aria-labelledby="filter-heading">
+      <h3 id="filter-heading">Filter Chatrooms</h3>
+
+      <form id="filter-form">
+        <fieldset>
+          <legend>Location</legend>
+          <label>
+            <input type="radio" name="location" value="local" />
+            Near me (within 250 miles)
+          </label>
+          <label>
+            <input type="radio" name="location" value="usa" checked />
+            USA-wide
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Topic</legend>
+          <label>
+            <select name="topic" id="topic-select">
+              <option value="all">All topics</option>
+              <!-- JS will populate -->
+            </select>
+          </label>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- CHATROOM LIST -->
+    <section class="chatroom-list" aria-labelledby="rooms-heading">
+      <h3 id="rooms-heading">Available Chatrooms</h3>
+
+      <div id="chatroom-grid" class="card-grid">
+        <!-- 15+ chatroom cards generated here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DIALOG -->
+  <dialog id="room-modal" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close dialog">&times;</button>
+
+      <h3 id="modal-title">Chatroom Details</h3>
+
+      <div id="modal-body">
+        <!-- JS injects details -->
+      </div>
+
+      <button class="btn primary">Join Chatroom</button>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <nav aria-label="Footer navigation">
+      <a href="info.html#about">About</a>
+      <a href="info.html#privacy">Privacy</a>
+      <a href="info.html#terms">Terms</a>
+      <a href="attributions.html">Attributions</a>
+    </nav>
+    <p>&copy; <span id="year"></span> Chat Connect • G S</p>
+  </footer>
+</body>
+</html>

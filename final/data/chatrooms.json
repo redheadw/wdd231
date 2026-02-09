@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Tulsa Coffee Chat",
+    "topic": "Social",
+    "city": "Tulsa",
+    "state": "OK",
+    "scope": "local",
+    "members": 42,
+    "description": "A relaxed chatroom for casual conversation over coffee topics, daily life, and local events."
+  },
+  {
+    "id": 2,
+    "name": "OKC Night Owls",
+    "topic": "Lifestyle",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "scope": "local",
+    "members": 31,
+    "description": "Late-night conversations for people who are up after hours and enjoy meaningful discussions."
+  },
+  {
+    "id": 3,
+    "name": "Arkansas Outdoors",
+    "topic": "Hobbies",
+    "city": "Fayetteville",
+    "state": "AR",
+    "scope": "local",
+    "members": 27,
+    "description": "Talk hiking, camping, fishing, and outdoor adventures across the Arkansas region."
+  },
+  {
+    "id": 4,
+    "name": "Kansas City Creatives",
+    "topic": "Art",
+    "city": "Kansas City",
+    "state": "MO",
+    "scope": "local",
+    "members": 54,
+    "description": "A space for artists, designers, and creative thinkers to connect and share ideas."
+  },
+  {
+    "id": 5,
+    "name": "Texas Tech Talk",
+    "topic": "Technology",
+    "city": "Austin",
+    "state": "TX",
+    "scope": "local",
+    "members": 63,
+    "description": "Discuss technology trends, gadgets, coding, and innovation happening in Texas."
+  },
+  {
+    "id": 6,
+    "name": "USA Book Club",
+    "topic": "Books",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 118,
+    "description": "Readers from across the country discussing books, authors, and monthly reading picks."
+  },
+  {
+    "id": 7,
+    "name": "National Movie Lounge",
+    "topic": "Entertainment",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 210,
+    "description": "Chat about new releases, classics, streaming favorites, and movie recommendations."
+  },
+  {
+    "id": 8,
+    "name": "USA Sports Fans",
+    "topic": "Sports",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 185,
+    "description": "All sports, all leagues — a place for fans across the USA to talk games and teams."
+  },
+  {
+    "id": 9,
+    "name": "Remote Work Network",
+    "topic": "Career",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 156,
+    "description": "Connect with remote workers nationwide to share tips, jobs, and productivity strategies."
+  },
+  {
+    "id": 10,
+    "name": "Mindful Living USA",
+    "topic": "Wellness",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 92,
+    "description": "Discussions focused on mental health, mindfulness, and balanced living."
+  },
+  {
+    "id": 11,
+    "name": "Gaming Across America",
+    "topic": "Gaming",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 244,
+    "description": "Console, PC, and casual gamers chatting about new games, strategies, and communities."
+  },
+  {
+    "id": 12,
+    "name": "Home Cooking Circle",
+    "topic": "Food",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 87,
+    "description": "Share recipes, cooking tips, and favorite meals from kitchens across the country."
+  },
+  {
+    "id": 13,
+    "name": "Beginner Coders Hub",
+    "topic": "Technology",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 134,
+    "description": "A welcoming space for people learning to code and building tech skills together."
+  },
+  {
+    "id": 14,
+    "name": "Travel Talk USA",
+    "topic": "Travel",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 101,
+    "description": "Swap travel stories, tips, and destination ideas from around the United States."
+  },
+  {
+    "id": 15,
+    "name": "Music Lovers Collective",
+    "topic": "Music",
+    "city": "",
+    "state": "",
+    "scope": "usa",
+    "members": 173,
+    "description": "From playlists to live shows, connect with music fans nationwide."
+  }
+]

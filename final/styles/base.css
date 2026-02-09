@@ -1,0 +1,251 @@
+/* ===============================
+   CSS VARIABLES / THEME
+================================ */
+:root {
+  --bg: #f6fbfa;
+  --surface: #ffffff;
+  --navy: #12324a;
+  --gray: #5e6b75;
+  --green: #6fd3b3;
+  --blue: #7cb7e6;
+
+  --radius: 16px;
+  --shadow: 0 10px 24px rgba(18, 50, 74, 0.12);
+
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-head: "Poppins", system-ui, sans-serif;
+
+  --max-width: 1100px;
+}
+
+/* ===============================
+   RESET / BASE
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: linear-gradient(180deg, var(--bg), #fff);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+header,
+main,
+footer {
+  width: min(var(--max-width), 100% - 2rem);
+  margin-inline: auto;
+}
+
+main {
+  padding-block: 1.5rem;
+}
+
+/* ===============================
+   HEADER / NAV
+================================ */
+.site-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(94, 107, 117, 0.25);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.6rem;
+}
+
+.site-nav {
+  padding-bottom: 1rem;
+}
+
+.nav-toggle {
+  background: none;
+  border: 1px solid var(--gray);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#primary-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#primary-nav.open {
+  display: flex;
+}
+
+#primary-nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(124, 183, 230, 0.15);
+  color: var(--navy);
+}
+
+/* ===============================
+   TYPOGRAPHY
+================================ */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-head);
+  margin-top: 0;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: var(--green);
+  color: #063b2f;
+}
+
+.btn.secondary {
+  background: var(--blue);
+  color: #072a44;
+}
+
+/* ===============================
+   CARDS / GRID
+================================ */
+.card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.chatroom-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+/* ===============================
+   FILTERS
+================================ */
+.filters form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+fieldset {
+  border: 1px solid rgba(94, 107, 117, 0.25);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+}
+
+/* ===============================
+   FORM
+================================ */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray);
+}
+
+/* ===============================
+   MODAL
+================================ */
+dialog {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.2rem;
+  max-width: 420px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.site-footer {
+  border-top: 1px solid rgba(94, 107, 117, 0.25);
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}

@@ -1,0 +1,38 @@
+@media (min-width: 760px) {
+  /* NAV */
+  .nav-toggle {
+    display: none;
+  }
+
+  #primary-nav {
+    display: flex !important;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 0;
+  }
+
+  .site-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* GRID */
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  /* FORMS */
+  .filters form {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: end;
+  }
+}

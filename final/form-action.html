@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Chat Connect | Form Submission</title>
+
+  <meta name="description" content="Form submission confirmation for Chat Connect." />
+  <meta name="author" content="G S" />
+
+  <link rel="icon" href="images/icons/favicon.ico" />
+
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+
+  <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">💬</span>
+      <h1>Chat Connect</h1>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        ☰ <span class="visually-hidden">Menu</span>
+      </button>
+      <ul id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chatrooms.html">Chatrooms</a></li>
+        <li><a href="info.html">Info</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="confirmation">
+      <h2>Submission Received</h2>
+      <p>Thank you for connecting with Chat Connect. Here is the information you submitted:</p>
+
+      <dl class="submission-data">
+        <dt>Username</dt>
+        <dd id="username"></dd>
+
+        <dt>Email</dt>
+        <dd id="email"></dd>
+
+        <dt>Preferred Topic</dt>
+        <dd id="topic"></dd>
+
+        <dt>Location Preference</dt>
+        <dd id="location"></dd>
+      </dl>
+
+      <a href="index.html" class="btn primary">Return Home</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Chat Connect • G S</p>
+  </footer>
+
+  <script>
+    // Display submitted form data
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById("username").textContent =
+      params.get("username") || "Not provided";
+
+    document.getElementById("email").textContent =
+      params.get("email") || "Not provided";
+
+    document.getElementById("topic").textContent =
+      params.get("topic") || "Not selected";
+
+    document.getElementById("location").textContent =
+      params.get("location") || "Not selected";
+  </script>
+</body>
+</html>
