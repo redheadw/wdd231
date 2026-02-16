@@ -12,16 +12,19 @@ const modal = document.querySelector("#room-modal");
 const modalBody = document.querySelector("#modal-body");
 const modalTitle = document.querySelector("#modal-title");
 const modalClose = document.querySelector(".modal-close");
+const joinButton = document.querySelector("#join-room");
 
 // State
 let chatrooms = [];
+let selectedRoom = null;
+
 let currentFilter = {
   location: localStorage.getItem("locationFilter") || "usa",
   topic: localStorage.getItem("topicFilter") || "all"
 };
 
 // ===============================
-// Fetch Data
+// Fetch Data (async + try/catch)
 // ===============================
 async function loadChatrooms() {
   try {
@@ -33,12 +36,14 @@ async function loadChatrooms() {
 
     chatrooms = await response.json();
     populateTopics(chatrooms);
-    applyFilters();
     restoreFormState();
+    applyFilters();
 
   } catch (error) {
     console.error("Failed to load chatrooms:", error);
-    grid.innerHTML = `<p class="error">Unable to load chatrooms at this time.</p>`;
+    if (grid) {
+      grid.innerHTML = `<p class="error">Unable to load chatrooms at this time.</p>`;
+    }
   }
 }
 
@@ -46,6 +51,8 @@ async function loadChatrooms() {
 // Populate Topic Dropdown
 // ===============================
 function populateTopics(data) {
+  if (!topicSelect) return;
+
   const topics = [...new Set(data.map(room => room.topic))].sort();
 
   topics.forEach(topic => {
@@ -60,6 +67,8 @@ function populateTopics(data) {
 // Filter + Render
 // ===============================
 function applyFilters() {
+  if (!grid) return;
+
   let filtered = [...chatrooms];
 
   if (currentFilter.location !== "all") {
@@ -74,9 +83,11 @@ function applyFilters() {
 }
 
 // ===============================
-// Render Cards
+// Render Cards (template literals)
 // ===============================
 function renderChatrooms(data) {
+  if (!grid) return;
+
   grid.innerHTML = "";
 
   if (data.length === 0) {
@@ -100,35 +111,43 @@ function renderChatrooms(data) {
 }
 
 // ===============================
-// Event Handlers
+// Event Handlers (filters)
 // ===============================
-filterForm.addEventListener("change", (event) => {
-  const formData = new FormData(filterForm);
+if (filterForm) {
+  filterForm.addEventListener("change", () => {
+    const formData = new FormData(filterForm);
 
-  currentFilter.location = formData.get("location");
-  currentFilter.topic = formData.get("topic");
+    currentFilter.location = formData.get("location");
+    currentFilter.topic = formData.get("topic");
 
-  localStorage.setItem("locationFilter", currentFilter.location);
-  localStorage.setItem("topicFilter", currentFilter.topic);
+    localStorage.setItem("locationFilter", currentFilter.location);
+    localStorage.setItem("topicFilter", currentFilter.topic);
 
-  applyFilters();
-});
+    applyFilters();
+  });
+}
 
 // ===============================
 // Modal Handling
 // ===============================
-grid.addEventListener("click", (event) => {
-  const button = event.target.closest(".view-details");
-  if (!button) return;
+if (grid) {
+  grid.addEventListener("click", (event) => {
+    const button = event.target.closest(".view-details");
+    if (!button) return;
 
-  const card = button.closest(".chatroom-card");
-  const roomId = Number(card.dataset.id);
-  const room = chatrooms.find(r => r.id === roomId);
+    const card = button.closest(".chatroom-card");
+    const roomId = Number(card.dataset.id);
+    const room = chatrooms.find(r => r.id === roomId);
 
-  openModal(room);
-});
+    openModal(room);
+  });
+}
 
 function openModal(room) {
+  if (!modal) return;
+
+  selectedRoom = room;
+
   modalTitle.textContent = room.name;
 
   modalBody.innerHTML = `
@@ -143,23 +162,53 @@ function openModal(room) {
   modal.showModal();
 }
 
-// Close modal
-modalClose.addEventListener("click", () => modal.close());
+// Close modal button
+if (modalClose) {
+  modalClose.addEventListener("click", () => modal.close());
+}
 
-// Click outside modal closes it
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) modal.close();
-});
+// Click outside closes modal
+if (modal) {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) modal.close();
+  });
+}
+
+// ===============================
+// Join Chatroom (localStorage + DOM update)
+// ===============================
+if (joinButton) {
+  joinButton.addEventListener("click", () => {
+    if (!selectedRoom) return;
+
+    localStorage.setItem("joinedRoom", selectedRoom.name);
+
+    modalBody.innerHTML = `
+      <h4>You joined:</h4>
+      <p><strong>${selectedRoom.name}</strong></p>
+      <p>You can now participate in this conversation.</p>
+    `;
+
+    setTimeout(() => modal.close(), 1500);
+  });
+}
 
 // ===============================
 // Restore Form State
 // ===============================
 function restoreFormState() {
-  filterForm.location.value = currentFilter.location;
-  topicSelect.value = currentFilter.topic;
+  if (!filterForm) return;
+
+  const locationInput = filterForm.querySelector(
+    `input[name="location"][value="${currentFilter.location}"]`
+  );
+  if (locationInput) locationInput.checked = true;
+
+  if (topicSelect) topicSelect.value = currentFilter.topic;
 }
 
 // ===============================
 // Init
 // ===============================
 loadChatrooms();
+
