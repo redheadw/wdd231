@@ -1,8 +1,8 @@
 // ===============================
 // Chatrooms Module
 // ===============================
+const DATA_URL = "./data/chatrooms.json";
 
-const DATA_URL = "data/chatrooms.json";
 
 // DOM elements
 const grid = document.querySelector("#chatroom-grid");
